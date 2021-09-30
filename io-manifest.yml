@@ -36,16 +36,6 @@ tool_information:
     instance_url: <<BLACKDUCK_SERVER_URL>>
     auth_token: <<BLACKDUCK_ACCESS_TOKEN>>
 
-environment:
-  scm: github
-  scmOwner: adityabyreddy
-  scmRepositoryName: iq-test
-  scmBranchName: main
-  githubToken: <<GITHUB_TOKEN>>
-  githubApiUrl: https://api.github.com/repos/
-  testDeploymentRoot: "insecure-bank"
-  imChannelIdentifier: "#stargazer-notifications"
-
 security:
   pipeline:
     type: "Inline"
