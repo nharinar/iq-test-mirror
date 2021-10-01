@@ -1,7 +1,7 @@
 {
   "application": {
     "appId": "GAZER-123",
-    "assetId": "TESTAPP1",
+    "assetId": "IO",
     "appName": "TEST",
     "appType": "Webapp",
     "microservice": false,
