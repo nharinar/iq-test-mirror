@@ -9,10 +9,6 @@
     "restApi": false,
     "microservice": false,
     "projectLanguage": "Java",
-    "frameworks": [
-      "Spring security",
-      "Hibernate"
-    ],
     "platformVersion": "Java 8",
     "buildSystem": "Maven",
     "riskMatrixRevision": "Rev1.0",
