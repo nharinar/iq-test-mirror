@@ -67,6 +67,43 @@
       }
     }
   ],
+  "buildbreaker":[
+       {
+          "activityname":"sast",
+          "status":[
+             "new",
+             "open"
+          ],
+          "overallseverity":[
+             "high"
+          ],
+          "categories":[
+             {
+                "name":"cross-site scripting",
+                "severity":"high"
+             },
+             {
+                "name":"sql injection",
+                "severity":"high"
+             }
+          ]
+       },
+       {
+          "activityname":"sca",
+          "status":[
+             "new"
+          ],
+          "overallseverity":[
+             "high"
+          ],
+          "categories":[
+             {
+                "name":"cve-2015-2119",
+                "severity":"medium"
+             }
+          ]
+       }
+    ],
   "security": {
     "pipeline": {
       "type": "Inline",
