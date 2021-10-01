@@ -27,11 +27,7 @@
       "gitlabHostUrl": "<<GITLAB_HOST_URL>>",
       "gitlabToken": "<<GITLAB_TOKEN>>",
       "enableJira": "false",
-      "jiraProjectName": "<<JIRA_PROJECT_NAME>>",
-      "jiraIssuesQuery": "<<JIRA_ISSUES_QUERY>>",
-      "jiraApiUrl": "<<JIRA_API_URL>>",
-      "jiraUserName": "<<JIRA_USERNAME>>",
-      "jiraAuthToken": "<<JIRA_AUTH_TOKEN>>"
+      "testDeploymentRoot": "insecure-bank"
    },
    "security": {
       "activities": {
@@ -41,7 +37,11 @@
          "sca": {
             "rescanThreshold": "10"
          }
-      }
+      },
+    "pipeline": {
+       "type": "Inline",
+       "toolchain": "Synopsys"
+    }
    },
    "connectors": [],
    "buildbreaker": [
