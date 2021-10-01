@@ -99,10 +99,5 @@
         "rescanThreshold": 10
       }
     }
-  },
-  "sct": {
-    "enableJira": "true",
-    "jiraIssueType": "Bug",
-    "enableBuildBreaker": "true"
   }
 }
