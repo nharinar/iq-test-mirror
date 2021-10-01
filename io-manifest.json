@@ -27,7 +27,12 @@
       "gitlabHostUrl": "<<GITLAB_HOST_URL>>",
       "gitlabToken": "<<GITLAB_TOKEN>>",
       "enableJira": "false",
-      "testDeploymentRoot": "insecure-bank"
+      "testDeploymentRoot": "insecure-bank",
+      "jiraProjectName": "IQ3",
+      "jiraIssuesQuery": "project=IQ3",
+      "jiraApiUrl": "<<JIRA_API_URL>>",
+      "jiraAuthToken": "<<JIRA_AUTH_TOKEN>>",
+      "jiraUserName": "<<JIRA_USER_EMAIL>>"
    },
    "security": {
       "activities": {
