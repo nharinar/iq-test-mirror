@@ -1,6 +1,6 @@
 application:
-  appId: GAZER-123
-  assetId: TESTAPP1
+  appId: GAZER-1234
+  assetId: TESTAPP4
   appName: TEST
   sdlcType: EDM
   appType: Webapp
@@ -29,12 +29,22 @@ tool_information:
     project_name: iq-test
     instance_url: <<POLARIS_SERVER_URL>>
     auth_token: <<POLARIS_ACCESS_TOKEN>>
-- tool_name: blackduck
-  enabled: true
-  fields:
-    project_name: iq-test
-    instance_url: <<BLACKDUCK_SERVER_URL>>
-    auth_token: <<BLACKDUCK_ACCESS_TOKEN>>
+
+environment:
+  scm: github
+  scmOwner: nharinar
+  scmRepositoryName: iq-test-mirror
+  scmBranchName: main
+  githubToken: <<GITHUB_TOKEN>>
+  githubApiUrl: https://api.github.com/repos/
+  testDeploymentRoot: "insecure-bank"
+  imChannelIdentifier: "#stargazer-notifications"
+  jiraProjectName: "IQ3"
+  jiraIssuesQuery: "project=IQ3"
+  jiraApiUrl: <<JIRA_API_URL>>
+  jiraAuthToken: <<JIRA_AUTH_TOKEN>>
+  jiraUserName: <<JIRA_USER_EMAIL>>
+
 
 security:
   pipeline:
@@ -60,18 +70,8 @@ buildBreaker:
     overallSeverityQuery: "high"
     categoryQuery: "cross-site scripting"
     categorySeverityQuery: "medium"
-  blackduck:
-    statusQuery: "new"
-    overallSeverityQuery: "medium"
-    cveQuery: ""
-    componentQuery: ""
-  seeker:
-    statusQuery: "new"
-    overallSeverityQuery: "critical"
-    categoryQuery: "SQL Injection"
-    categorySeverityQuery: "high"
 
 sct:
-  enableJira: "true"
+  enableJira: "false"
   jiraIssueType: "Bug"
   enableBuildBreaker: "true"
