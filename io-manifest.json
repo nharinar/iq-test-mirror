@@ -42,8 +42,8 @@
   ],
   "environment": {
     "scm": "github",
-    "scmOwner": "adityabyreddy",
-    "scmRepositoryName": "iq-test",
+    "scmOwner": "nharinar",
+    "scmRepositoryName": "iq-test-mirror",
     "scmBranchName": "main",
     "githubToken": "<<GITHUB_TOKEN>>",
     "githubApiUrl": "https://api.github.com/repos/",
