@@ -1,0 +1,131 @@
+{
+   "application": {
+      "appId": "test-1234",
+      "assetId": "IO",
+      "appType": "Webapp",
+      "release": "TEST",
+      "microservice": false,
+      "projectLanguage": "Java",
+      "platformVersion": "Java 8",
+      "buildSystem": "Maven",
+      "riskMatrixRevision": "Rev1.0",
+      "sourceFilePattern": ".*\\+\\+\\+.*(\\.java|\\.jsp)+.*",
+      "sensitivePackagePattern": "<<SENSITIVE_PACKAGE_PATTERN>>",
+      "fileChangeThreshold": "1"
+   },
+   "environment": {
+      "scm": "github",
+      "scmOwner": "nharinar",
+      "scmRepositoryName": "iq-test-mirror",
+      "scmBranchName": "main",
+      "bitbucketUserName": "<<BITBUCKET_USERNAME>>",
+      "bitbucketPassword": "<<BITBUCKET_PASSWORD>>",
+      "bitbucketApiUrl": "https://api.bitbucket.org/2.0/repositories/",
+      "githubApiUrl": "https://api.github.com/repos/",
+      "githubUsername": "<<GITHUB_USERNAME>>",
+      "githubToken": "<<GITHUB_ACCESS_TOKEN>>",
+      "gitlabHostUrl": "<<GITLAB_HOST_URL>>",
+      "gitlabToken": "<<GITLAB_TOKEN>>",
+      "enableJira": "false",
+      "jiraProjectName": "<<JIRA_PROJECT_NAME>>",
+      "jiraIssuesQuery": "<<JIRA_ISSUES_QUERY>>",
+      "jiraApiUrl": "<<JIRA_API_URL>>",
+      "jiraUserName": "<<JIRA_USERNAME>>",
+      "jiraAuthToken": "<<JIRA_AUTH_TOKEN>>"
+   },
+   "security": {
+      "activities": {
+         "sast": {
+            "rescanThreshold": "10"
+         },
+         "sca": {
+            "rescanThreshold": "10"
+         }
+      }
+   },
+   "connectors": [],
+   "buildbreaker": [
+      {
+         "activityname": "sast",
+         "status": [
+            "new",
+            "open"
+         ],
+         "overallseverity": [
+            "high"
+         ],
+         "categories": [
+            {
+               "name": "cross-site scripting",
+               "severity": "high"
+            },
+            {
+               "name": "sql injection",
+               "severity": "high"
+            }
+         ]
+      },
+      {
+         "activityname": "sca",
+         "status": [
+            "new"
+         ],
+         "overallseverity": [
+            "high"
+         ],
+         "categories": [
+            {
+               "name": "cve-2015-2119",
+               "severity": "medium"
+            }
+         ]
+      }
+   ],
+   "tool_information": [
+      {
+         "tool_name": "coverity",
+         "enabled": false,
+         "fields": {
+            "file_path": "coverity-results.json",
+            "stream": "<<COVERITY_STREAM>>",
+            "instance_url": "<<COVERITY_SERVER_URL>>",
+            "username": "<<COVERITY_USERNAME>>",
+            "password": "<<COVERITY_PASSWORD>>"
+         }
+      },
+      {
+         "tool_name": "polaris",
+         "enabled": "true",
+         "fields": {
+            "project_name": "<<POLARIS_PROJECT_NAME>>",
+            "instance_url": "<<POLARIS_SERVER_URL>>",
+            "auth_token": "<<POLARIS_ACCESS_TOKEN>>"
+         }
+      },
+      {
+         "tool_name": "sigma",
+         "enabled": false,
+         "fields":{
+            "output_file": "sigma-results.json"
+         }
+      },
+      {
+         "tool_name": "blackduck",
+         "enabled": "true",
+         "fields": {
+            "project_name": "<<BLACKDUCK_PROJECT_NAME>>",
+            "instance_url": "<<BLACKDUCK_SERVER_URL>>",
+            "auth_token": "<<BLACKDUCK_ACCESS_TOKEN>>"
+         }
+      },
+      {
+         "tool_name": "seeker",
+         "enabled": "<<IS_DAST_ENABLED>>",
+         "fields": {
+            "project_name": "<<SEEKER_PROJECT_NAME>>",
+            "instance_url": "<<SEEKER_SERVER_URL>>",
+            "auth_token": "<<SEEKER_ACCESS_TOKEN>>"
+         }
+      }
+   ]
+}
